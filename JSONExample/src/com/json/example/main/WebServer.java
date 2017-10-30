@@ -21,24 +21,25 @@ public class WebServer extends HttpServlet
     {
         String jsonData = request.getParameter("param");
         
-        System.out.println(jsonData);
+        JSONParser parser = new JSONParser();
         
-//        JSONParser parser = new JSONParser();
-//        
-//        Object obj = null;
-//
-//        try
-//        {
-//            obj = parser.parse(jsonData);
-//        }
-//        catch (ParseException e)
-//        {
-//            // TODO Auto-generated catch block
-//            e.printStackTrace();
-//        }
-//        
-//        JSONObject jsonObj = (JSONObject) obj;
-//        
-//        System.out.println("get Name : " + jsonObj.get("name") );
+        Object object = null;
+
+        try
+        {
+            object = parser.parse(jsonData);
+        }
+        catch (ParseException e)
+        {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        
+        JSONObject jsonObject = (JSONObject) object;
+        
+        System.out.println("get jsonData : " + jsonData);
+        System.out.println("get Name : " + jsonObject.get("name") );
+        System.out.println("get age : " + jsonObject.get("age") );
+        System.out.println("get city : " + jsonObject.get("city") );
     }
 }

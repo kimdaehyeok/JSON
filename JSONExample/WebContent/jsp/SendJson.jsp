@@ -10,8 +10,8 @@
 
 <script>
 	var httpRequest;
-	var myObj = { name:"John", age:31, city : "New York" };
-	var myJSON = JSON.stringify(myObj);
+	var javascriptObject = { name:"John", age:31, city : "New York" };
+	var convertJSON = JSON.stringify(javascriptObject);
 	
 	function ajaxSendJSONData()
 	{
@@ -21,7 +21,7 @@
 		
 		httpRequest.open('POST',sendURL,true);
 		httpRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-		httpRequest.send("param=" + myJSON);
+		httpRequest.send("param=" + convertJSON);
 	}
 	
 	function alertJSONData()
