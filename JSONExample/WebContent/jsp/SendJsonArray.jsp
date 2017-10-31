@@ -6,6 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
 </head>
+<script type="text/javascript" src="/JSONExample/js/json2.js"></script>
 
 <script>
 var httpRequest;
@@ -24,7 +25,7 @@ var convertJSON = JSON.stringify(javascriptObject);
 
 function ajaxSendJSONData()
 {
-	var sendURL = "http://localhost:8081/JSONExample/main.do";
+	var sendURL = "http://localhost:8081/JSONExample/JSONArray.do";
 	httpRequest = new XMLHttpRequest();
 	httpRequest.onchangestatechange = alertJSONData();
 	
@@ -32,9 +33,20 @@ function ajaxSendJSONData()
 	httpRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	httpRequest.send("param=" + convertJSON);
 }
+
+function alertJSONData()
+{
+	if(httpRequest.readyState == 4)
+	{
+		if(httpRequest.status == 200)		
+		{
+			alert(httpRequest.responseText);
+		}
+	}
+}
 </script>
 
 <body>
-
+	<input type = "button" value = "send JSON by AJAX" onclick = "ajaxSendJSONData()" />
 </body>
 </html>

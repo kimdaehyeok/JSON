@@ -13,8 +13,8 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 
-@WebServlet("/main.do")
-public class WebServer extends HttpServlet
+@WebServlet("/JSONObject.do")
+public class JSONObjectServer extends HttpServlet
 {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) 
@@ -37,9 +37,9 @@ public class WebServer extends HttpServlet
         
         JSONObject jsonObject = (JSONObject) object;
         
-        System.out.println("get jsonData : " + jsonData);
-        System.out.println("get Name : " + jsonObject.get("name") );
-        System.out.println("get age : " + jsonObject.get("age") );
-        System.out.println("get city : " + jsonObject.get("city") );
+        System.out.println("* get jsonData : " + jsonData);
+        System.out.println("* get Name : " + jsonObject.get("name") );
+        System.out.println("* get age : " + jsonObject.get("age") );
+        System.out.println("* get city : " + jsonObject.get("city") );
     }
 }

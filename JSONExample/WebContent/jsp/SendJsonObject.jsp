@@ -15,7 +15,7 @@
 	
 	function ajaxSendJSONData()
 	{
-		var sendURL = "http://localhost:8081/JSONExample/main.do";
+		var sendURL = "http://localhost:8081/JSONExample/JSONObject.do";
 		httpRequest = new XMLHttpRequest();
 		httpRequest.onchangestatechange = alertJSONData();
 		
