@@ -22,10 +22,13 @@ public class JSONObejctSend extends HttpServlet
         jsonObject.put("name", "kimdaehyeok");
         jsonObject.put("age", "27");
         
-        String jsonString = jsonObject.toJSONString();
+//        String jsonString = jsonObject.toJSONString();
+//        request.setAttribute("User", jsonString);
         
+        response.setContentType("application/json");
+
         request.setAttribute("intro", "My introduce : ");
-        request.setAttribute("User", jsonString);
+        request.setAttribute("User", jsonObject);
         request.setAttribute("UserObject", jsonObject);
         
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/jsp/receiveJSONFromServer.jsp");

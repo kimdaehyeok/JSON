@@ -33,8 +33,9 @@ public class JSONArraySend extends HttpServlet
         jsonArray.add(jsonObject1);
         jsonArray.add(jsonObject2);
         
-        jsonArray.toJSONString();
-        
+//        jsonArray.toJSONString();
+
+        response.setContentType("application/json");
         request.setAttribute("users", jsonArray);
         
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/jsp/receiveJSONArrayFromServer.jsp");
